@@ -1,9 +1,6 @@
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 
-
-class DBot:
-
     def main():
 
         login, password = '380664582704', '7285729BMS@'
@@ -12,8 +9,7 @@ class DBot:
         vka = vk_session.auth()
         try:
             vk_session.auth()
-        except vk_api.AuthError as error_msg:
-            print(error_msg)
+        except vk_api.AuthError
             return
     
         longpoll = VkLongPoll(vk_session)

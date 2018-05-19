@@ -1,1 +1,1 @@
-python longpoll.py 
+web = python longpoll.py 

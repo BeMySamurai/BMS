@@ -17,7 +17,6 @@ def main():
     hello = 'Дикей' #Переменная
     wannasomerandom = "Дикей, рандом" #Переменная
 
-<<<<<<< HEAD
     for event in longpoll.listen():
         if event.type == VkEventType.MESSAGE_NEW and event.from_chat: #Новое сообщение в беседе
             if event.text == hello: #Если текст сообщения совпадает со значением переменной "hello", то произойдёт следующее:
@@ -25,39 +24,21 @@ def main():
                     random_id=(), #Команда чтобы не было спама а-ля привет привет привет привет привет
                     chat_id=event.chat_id, #Айди беседы, задано по умолчанию как айди беседы, в которой появилось новое сообщение
                     message='Мявк. Приветик.' #Текст сообщения
-                    )       
+                    )
             elif event.text == wannasomerandom: #Иначе если текст сообщения равен тексту в переменной "wannasomerandom", произойдёт:
-=======
-        login, password = 'login', 'password'
-        vk_session = vk_api.VkApi(login, password)
-        vk = vk_session.get_api()
-        try:
-            vk_session.auth()
-        except vk_api.AuthError as error_msg:
-            print(error_msg)
-            return
-        longpoll = VkLongPoll(vk_session)
-
-        x = "Дикей"
-
-        for event in longpoll.listen():
-            if event.type == VkEventType.MESSAGE_NEW and event.from_chat:
-             if event.text == x:
->>>>>>> 7367b1ec69285d72ef08c360d7c861f43a040d60
                 vk.messages.send(
                     random_id=(),
                     chat_id=event.chat_id,
                     message=random.randint(1,1000000)
-                    )     
-
+                    )                                        
         if event.type == VkEventType.MESSAGE_NEW and event.from_user: #Новое сообщение от пользователя
-            if event.text == hello:
+            if event.text == hello: #Если текст сообщения совпадает со значением переменной "hello", то произойдёт следующее:
                 vk.messages.send(
                     random_id=(),
-                    user_id=event.user_id,
-                    message='Мявк. Приветик.'
+                    user_id=event.user_id, #Айди пользователя, задано по умолчанию как айди от которого пришло новое сообщение
+                    message='Мявк. Приветик.' #Текст сообщения
                     )
-            elif event.text == wannasomerandom:
+            elif event.text == wannasomerandom: #Иначе если текст сообщения равен тексту в переменной "wannasomerandom", произойдёт:
                 vk.messages.send(
                     random_id=(),
                     user_id=event.user_id,

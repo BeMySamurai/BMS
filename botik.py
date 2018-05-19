@@ -3,7 +3,7 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 
 def main():
 
-        login, password = '380664582704', '7285729BMS@'
+        login, password = 'login', 'password'
         vk_session = vk_api.VkApi(login, password)
         vk = vk_session.get_api()
         try:

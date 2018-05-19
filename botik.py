@@ -17,6 +17,7 @@ def main():
     hello = 'Дикей' #Переменная
     wannasomerandom = "Дикей, рандом" #Переменная
 
+<<<<<<< HEAD
     for event in longpoll.listen():
         if event.type == VkEventType.MESSAGE_NEW and event.from_chat: #Новое сообщение в беседе
             if event.text == hello: #Если текст сообщения совпадает со значением переменной "hello", то произойдёт следующее:
@@ -26,6 +27,23 @@ def main():
                     message='Мявк. Приветик.' #Текст сообщения
                     )       
             elif event.text == wannasomerandom: #Иначе если текст сообщения равен тексту в переменной "wannasomerandom", произойдёт:
+=======
+        login, password = 'login', 'password'
+        vk_session = vk_api.VkApi(login, password)
+        vk = vk_session.get_api()
+        try:
+            vk_session.auth()
+        except vk_api.AuthError as error_msg:
+            print(error_msg)
+            return
+        longpoll = VkLongPoll(vk_session)
+
+        x = "Дикей"
+
+        for event in longpoll.listen():
+            if event.type == VkEventType.MESSAGE_NEW and event.from_chat:
+             if event.text == x:
+>>>>>>> 7367b1ec69285d72ef08c360d7c861f43a040d60
                 vk.messages.send(
                     random_id=(),
                     chat_id=event.chat_id,

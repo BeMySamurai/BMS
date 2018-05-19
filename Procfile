@@ -1,1 +1,1 @@
-web:python longpoll.py 
+python longpoll.py 

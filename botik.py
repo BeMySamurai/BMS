@@ -1,7 +1,7 @@
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 
-    def main():
+def main():
 
         login, password = '380664582704', '7285729BMS@'
         vk_session = vk_api.VkApi(login, password)
@@ -9,7 +9,8 @@ from vk_api.longpoll import VkLongPoll, VkEventType
         vka = vk_session.auth()
         try:
             vk_session.auth()
-        except vk_api.AuthError
+        except vk_api.AuthError as error_msg:
+            print(error_msg)
             return
     
         longpoll = VkLongPoll(vk_session)
@@ -36,5 +37,5 @@ from vk_api.longpoll import VkLongPoll, VkEventType
       
         return
 
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()

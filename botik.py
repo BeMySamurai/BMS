@@ -40,7 +40,6 @@ def main():
                     message='Я.' #Текст сообщения
                     )
             elif event.text == wannasomerandom: #Иначе если текст сообщения равен тексту в переменной "wannasomerandom", произойдёт:
-                if event.text == hello:
                     vk.messages.send(
                         random_id=(),
                         user_id=event.user_id,
